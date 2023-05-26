@@ -33,6 +33,7 @@
 					{% endif %}
 					<a href="{{ path('app.logout') }}" class="btn btn-danger">Deconnexion</a>
 				{% else %}
+					<a href="{{path('app.register')}}" class="btn btn-warning"> Inscription </a> 
 					<a href="{{ path('app.login') }}" class="btn btn-light">Connexion</a>
 				{% endif %}
 			</div>

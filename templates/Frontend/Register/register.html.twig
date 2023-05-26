@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Enregistrement | {{ parent() }}{% endblock %}
+
+{% block body %}
+        <h1 class="text-center"> S'enregistrer</h1>
+        {% include "Frontend/Register/_form.html.twig" with {button_label: "Envoyer"} %}
+
+{% endblock %}
