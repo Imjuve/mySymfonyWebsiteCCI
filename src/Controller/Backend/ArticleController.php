@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 #[Route('/admin/article', name: 'admin.article')]
 class ArticleController extends AbstractController
@@ -100,4 +101,14 @@ class ArticleController extends AbstractController
 
         return $this->redirectToRoute('admin.article.index');
     }
+    #[Route('/switch/{id}', name:".switch", methods: ['GET'])]
+    public function switchVisibilityArticle(?Article $article): JsonResponse
+    {
+        if(!$article instanceof Article){
+            return new JsonResponse('Article not found', 404);
+        }
+        $article->setActif(!$article->isActif());
+        $this->repo->save($article, true);
+            return new JsonResponse('Visibilité modifiée', 200);
+    }   
 }
