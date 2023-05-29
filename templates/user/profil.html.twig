@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Votre profil | {{ parent() }}
+{% endblock %}
+
+{% block body %}
+  <h1 class="text-center mt-5">Bienvenue {{ user.fullName }}</h1>
+
+<section class="infos-container">
+    <h2 class="infos-container-title">Vos infos:</h2>
+        <div class="infos-container-div">
+            <label class="infos-container-div-label">Votre nom : </label>
+            <p class="infos-container-div-info">{{user.lastName}}</p>
+            <a href="{{path('app.user.changeName', {id: user.id})}}" class="btn btn-warning">Modifier</a>
+        </div>
+        <hr>
+        <div class="infos-container-div">
+            <label class="infos-container-div-label">Votre prénom : </label>
+            <p class="infos-container-div-info">{{user.firstName}}</p>
+            <a href="#" class="btn btn-warning">Modifier</a>
+        </div>
+        <hr>
+        <div class="infos-container-div">
+            <label class="infos-container-div-label">Votre email : </label>
+            <p class="infos-container-div-info">{{user.email}}</p>
+            <a href="{{path('app.user.changeEmail', {id:user.id})}}" class="btn btn-warning">Modifier</a>
+        </div>
+        <hr>
+        <div class="infos-container-div">
+            <label class="infos-container-div-label">Votre adresse : </label>
+            <p class="infos-container-div-info">{{user.adresse}}</p>
+            <a href="{{path('app.user.changeAddress',{id:user.id})}}" class="btn btn-warning">Modifier</a>
+        </div>
+        <hr>
+        <div class="infos-container-div">
+            <label class="infos-container-div-label">Changer votre mot de passe : </label>
+            <a href="{{path('app.user.changePassword',{id:user.id})}}" class="btn btn-warning">Modifier</a>
+        </div>
+    
+</section>
+
+{% endblock %}

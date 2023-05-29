@@ -1,0 +1,40 @@
+.infos-container{
+    border: 1px solid;
+    margin: auto;
+    width: 60%;
+
+    &-title{
+    font-size: 2em;
+    padding: 10px;
+    }
+
+    &-div{
+    display: flex;
+    justify-content: space-between;
+    
+    }
+    
+    a{
+    height: fit-content;
+    border-radius: 10px;
+    margin-right: 20px;
+    align-self: center;
+    }
+}
+
+label, p{
+width:30%;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 1.1em;
+}
+label{
+    margin-left: 5px;
+}
+.infos-container-div:last-child{
+    margin-bottom: 10px;
+}
+
+hr{
+width: 90%;
+margin:5px auto;
+}

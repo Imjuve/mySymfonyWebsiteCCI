@@ -17,6 +17,7 @@
 			</div>
 			<div class="navbar-nav gap-2 ms-auto">
 				{% if app.user %}
+						<a href="{{path('app.user.profil')}}" class="btn btn-info"> Profil</a>
 					{% if is_granted('ROLE_ADMIN') %}
 						<div class="dropdown">
 							<button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

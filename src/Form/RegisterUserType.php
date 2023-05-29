@@ -19,7 +19,7 @@ class RegisterUserType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class,[
-                'label' => 'Votre email',
+                'label' => 'Votre email:',
                 'required'=> true,
                 ])
             ->add('password',RepeatedType::class,[
@@ -41,7 +41,8 @@ class RegisterUserType extends AbstractType
             ->add('adresse', TextType::class,[
                     'label' => 'Votre adresse:',
                     'required' => true,
-            ]);
+            ])
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

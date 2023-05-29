@@ -27,7 +27,7 @@ class RegisterController extends AbstractController
             return $this->redirectToRoute('homepage');
         }
         $user = new User();
-
+        // $options =['EmailField' => true];
         $form = $this->createForm(RegisterUserType::class, $user);
         $form->handleRequest($request);
 

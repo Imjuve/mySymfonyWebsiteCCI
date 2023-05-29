@@ -1,0 +1,10 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Changer votre email |{{parent()}}{% endblock %}
+
+{% block body %}
+    <h1 class="text-center mt-4">Modifier votre Email</h1>
+    
+   {% include "Frontend/Register/_form.html.twig" with {button_label: "Envoyer"} %}
+
+{% endblock %}
