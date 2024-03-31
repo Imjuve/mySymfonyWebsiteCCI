@@ -20,13 +20,14 @@ class AppFixtures extends Fixture
         // $manager->persist($product);
 
         $user = (new User())
-            ->setFirstName('Pierre')
-            ->setLastName('Bertrand')
+            ->setFirstName('test')
+            ->setLastName('test')
             ->setEmail('admin@test.com')
             ->setRoles(['ROLE_ADMIN'])
             ->setPassword(
                 $this->passwordHasher->hashPassword(new User(), 'Test1234')
-            );
+            )
+            ->setAdresse('test test test');
 
         $manager->persist($user);
 
